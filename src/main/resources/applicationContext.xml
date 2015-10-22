@@ -12,5 +12,7 @@
 	
 	<!-- active annotation config -->
 	<context:annotation-config />
+
+	<import resource="auth.xml" />
 </beans>
 
