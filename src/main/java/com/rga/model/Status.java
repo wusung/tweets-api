@@ -10,6 +10,11 @@ import java.util.Map;
  * Created by WinnieLin on 2015/10/22.
  */
 public class Status implements JSONAware {
+
+    private Integer id;
+    private String message;
+    private Integer userId;
+
     public Integer getId() {
         return id;
     }
@@ -33,10 +38,6 @@ public class Status implements JSONAware {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
-
-    private Integer id;
-    private String message;
-    private Integer userId;
 
     @Override
     public String toJSONString() {
