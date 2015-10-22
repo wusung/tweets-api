@@ -45,6 +45,7 @@ public class StatusServlet {
     }
 
     @GET
+    @Path("/")
     @Produces("application/json")
     public Response findAll() {
 

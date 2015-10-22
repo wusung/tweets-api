@@ -29,6 +29,7 @@ public class TestDataLoaderListener implements ServletContextListener {
         {
             User user = new User();
             user.setId(1);
+            user.setName("Wusung");
             user.setEmail("twkoci@gmail.com");
             user.setPassword("franky");
             userDao.insert(user);
@@ -37,6 +38,7 @@ public class TestDataLoaderListener implements ServletContextListener {
         {
             User user = new User();
             user.setId(2);
+            user.setName("Franky");
             user.setEmail("franky@gmail.com");
             user.setPassword("1234");
             userDao.insert(user);
