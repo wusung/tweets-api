@@ -6,6 +6,9 @@ import com.rga.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by WinnieLin on 2015/10/22.
  */
@@ -36,5 +39,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User find(String email) {
         return userDao.query(email);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userDao.query();
     }
 }

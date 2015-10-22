@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 /**
  * Created by WinnieLin on 2015/10/22.
@@ -19,6 +20,17 @@ public class UserServlet {
 
     @Autowired
     private UserService userService;
+
+    @GET
+    @Path("/")
+    @Produces("application/json")
+    public Response findAll() {
+
+        String message = "Query success";
+        List<User> users = userService.findAll();
+        String result = JSONUtils.makeJsonText(users, message);
+        return Response.status(200).entity(result).build();
+    }
 
     @GET
     @Path("{id}")
@@ -32,7 +44,7 @@ public class UserServlet {
             data = user.toJSONString();
         }
 
-        String result = JSONUtils.makeJsonText(data, message);
+        String result = JSONUtils.makeJsonText(user, message);
         return Response.status(200).entity(result).build();
     }
 

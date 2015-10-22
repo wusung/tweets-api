@@ -4,6 +4,8 @@ import com.rga.dao.UserDao;
 import com.rga.model.User;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -56,5 +58,10 @@ public class UserDaoImpl implements UserDao {
         }
 
         return false;
+    }
+
+    @Override
+    public List<User> query() {
+        return new ArrayList<>(users.values());
     }
 }
