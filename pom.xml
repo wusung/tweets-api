@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.rga</groupId>
-	<artifactId>customer</artifactId>
+	<artifactId>tweets</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RGA customer module</name>
