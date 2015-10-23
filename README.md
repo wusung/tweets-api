@@ -2,12 +2,12 @@ How to use
 ==========
 
 ##Scenario
-An insurance company needs a system to manage their customer data.  A software engineering team is working on the story below.
+An insurance company needs a system to tweet their current statuses.  A software engineering team is working on the story below.
 
-*As a system user, I want to add new customer data into the system. After added, I can view a certain customer, and a customer list. Of course, I am also able to modify the data as well as remove it from the system.* 
+*As a system user, I want to add new user data into the system. After added, I can view a certain user, an user list, and sign in with the new user email and password.
 
 ## Demo site
-You can see demo site here. https://demo-customer-api.herokuapp.com/rest/customer
+You can see available users here. https://tweets-example-api.herokuapp.com/rest/user
 
 ## Instructions
 Strongly suggest you use curl utility to test the following codes.
