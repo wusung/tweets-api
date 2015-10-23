@@ -2,9 +2,10 @@ How to use
 ==========
 
 ##Scenario
-An insurance company needs a system to tweet their current statuses.  A software engineering team is working on the story below.
+An web site need a function to tweet their current statuses.  A software engineering team is working on the story below.
 
 *As a system user, I want to add new user data into the system. After added, I can view a certain user, an user list, and sign in with the new user email and password.
+
 
 ## Demo site
 You can see available users here. https://tweets-example-api.herokuapp.com/rest/user
