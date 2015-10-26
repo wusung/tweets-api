@@ -1,14 +1,12 @@
 package com.rga.service;
 
+import com.rga.dao.UserDao;
 import com.rga.model.Status;
 import com.sun.jersey.api.spring.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by WinnieLin on 2015/10/22.
@@ -19,13 +17,21 @@ public class StatusService {
     @Autowired
     private AuthenticationService authenticationService;
 
+    @Autowired
+    UserDao userDao;
+
     private Map<Integer, Status> statuses = new HashMap<>();
 
     public List<Status> findAll() {
-        return new ArrayList(statuses.values());
-  }
+        List<Status> result = new ArrayList(statuses.values());
+        for (Status it : result) {
+            it.setUser(userDao.query(it.getUserId()));
+        }
+        return result;
+    }
 
     public boolean addStatus(Status status) {
+        status.setCreateDate(new Date());
         statuses.put(status.getId(), status);
         return true;
     }

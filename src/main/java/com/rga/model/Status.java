@@ -3,6 +3,8 @@ package com.rga.model;
 import org.json.simple.JSONAware;
 import org.json.simple.JSONValue;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -14,6 +16,8 @@ public class Status implements JSONAware {
     private Integer id;
     private String message;
     private Integer userId;
+    private User user;
+    private Date createDate;
 
     public Integer getId() {
         return id;
@@ -39,12 +43,30 @@ public class Status implements JSONAware {
         this.userId = userId;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toJSONString() {
         Map obj = new LinkedHashMap();
         obj.put("id", id);
         obj.put("message", message);
         obj.put("userId", userId);
+        obj.put("user", user);
+        obj.put("createDate", SimpleDateFormat.getInstance().format(createDate));
         return JSONValue.toJSONString(obj);
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }
